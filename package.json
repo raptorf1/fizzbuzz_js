@@ -1,0 +1,22 @@
+{
+  "name": "fizzbuzz_js_george",
+  "version": "1.0.0",
+  "description": "FizzBuzz with JavaScript for Craft Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raptorf1/fizzbuzz_js.git"
+  },
+  "keywords": [
+    "fizzbuzzJS"
+  ],
+  "author": "George Tomaras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raptorf1/fizzbuzz_js/issues"
+  },
+  "homepage": "https://github.com/raptorf1/fizzbuzz_js#readme"
+}
