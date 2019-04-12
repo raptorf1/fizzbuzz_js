@@ -134,3 +134,18 @@ This project utilizes the MIT open-source license. https://opensource.org/licens
 # Acknowledgments
 
 Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) for the README template 
+
+# Craft Academy Questions
+
+> Question 1: To the best of your knowledge, please explain what the following lines of code do:
+
+``` javascript
+const fs = require('fs');
+let fizzBuzz = fs.readFileSync('./src/js/fizz-buzz.js');
+eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
+```
+* The fs module of Node.js provides useful functions to interact with the file system. There is no need to install it. Being part of the Node core, it can be used by requiring it. And we do that with the `const fs` line.
+* After requiring the fs module we can call on its functions. One of these is `.readFileSync` function which reads the content of a file. In our case the file that will host the JavaScript code of our FizzBuzz challenge.
+* The `eval()` function evaluates JavaScript code represented as a string.
+
+> Question 2:
