@@ -7,6 +7,23 @@
     <title>Puppeteer Mocha Scaffold</title>
 </head>
 <body>
-    <!-- Place your content here -->
+    <input type="text" id="value">
+    <input tpe="submit" value="Check" id="button">
+    <div id="display_answer"></div>
+    
+    <script src="./js/fizz-buzz.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let button = document.getElementById("button")
+            let displayDiv = document.getElementById("display_answer")
+            button.addEventListener("click", () => {
+                let value = document.getElementById("value").value
+                let fizzBuzz = new FizzBuzz
+                let result = fizzBuzz.check(value)
+                displayDiv.innerHTML = result;
+                })
+        })    
+    </script>
+
 </body>
 </html>
