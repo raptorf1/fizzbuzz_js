@@ -136,7 +136,7 @@ Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 
 # Craft Academy Questions
 
-> Question 1: To the best of your knowledge, please explain what the following lines of code do:
+> <u> Question 1: To the best of your knowledge, please explain what the following lines of code do:</u>
 
 ``` javascript
 const fs = require('fs');
@@ -147,12 +147,12 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 * After requiring the fs module we can call on its functions. One of these is `.readFileSync` function which reads the content of a file. In our case the file that will host the JavaScript code of our FizzBuzz challenge.
 * The `eval()` function evaluates JavaScript code represented as a string. At least that's what the Mozilla site says. As to why do we need it here, I am anaware to be honest.
 
-> Question 2: To the best of your knowledge please explain why we are placing the `let fizzBuzz = new FizzBuzz` outside the it block?
+> <u> Question 2: To the best of your knowledge please explain why we are placing the `let fizzBuzz = new FizzBuzz` outside the it block?</u>
 
 * This line of code creates a new `FizzBuzz` object. Probably, the way we will implement the code further down, will create a new instance of the object (`fizzBuzz`), every time the user types in a number. For testng purposes ne need it present before each test, until we implement it in the JavaScript file.
 * Of course after 10 minutes of error messages, I found out that we must declare it in each test. So maybe we do not need it at all outside the `it` block? Cause tests are passing (at this stage) even without the whole `describe` block.
 
-> Question 3: To the best of your knowledge please explain the difference between using `===` and `==` in JavaScript.
+> <u> Question 3: To the best of your knowledge please explain the difference between using `===` and `==` in JavaScript.</u>
 
 * The difference between `==` and `===` operators, is that `==` compares operands by making type correction, whereas `===` not only checks the value, but also `typeof` of the two operands. If two operands are not of the same type, `===` returns false, while `==` returns true.
 
@@ -162,16 +162,16 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 
 * In our case, it's also a good way to implement a sad path in our code. That way, if the user input is anything else BUT a number, the function will return an error message.
 
-> Question 4: To the best of your knowledge, please explain why we are moving (number % 5 === 0) to the top?
+> <u> Question 4: To the best of your knowledge, please explain why we are moving (number % 5 === 0) to the top?</u>
 
 * Because the function runs the code from top to bottom and from left to right. This means that if the `number % 3 === 0` statement was first and the input was 15, the output would be "Fizz" cause 15 % 3 also equals 0. And we do not want that, cause it breaks the rules of the challenge. So we first check `number % 5 === 0 && number % 3 === 0` and then `number % 5 === 0` and last `number % 3 === 0`. That way, we get the desired output.
 
-> Question 5: To the best of your knowledge please explain the difference between feature and unit test.
+> <u> Question 5: To the best of your knowledge please explain the difference between feature and unit test.</u>
 
 * Unit testing only checks a single component of the system. In our case, it checks that the FizzBuzz function produces the desired output in a console environment.
 * Feature testing checks if an application is working as a whole, as described in the system requirement specifications. In our case, since we want to make a website that any user can visit we must check that there is an input field, an output field to diplay the result, etc.
 
-> Question 6: To the best of your knowledge, please explain what this following code does:
+> <u> Question 6: To the best of your knowledge, please explain what this following code does:</u>
 ```javascript
 describe('User can input a value and get FizzBuzz results', () => {
     before(async () => {
@@ -191,3 +191,19 @@ describe('User can input a value and get FizzBuzz results', () => {
 * Open up the Chromium browser and visit the server's root path.
 * Reload the page before each test.
 * Browser closes after the test is finished.
+
+> <u>Question 7: To the best of your knowledge, please explain what the expectations in the context of testing are.</u>
+```javascript
+it('clicking on the "Check" button', async () => {
+    await browser.fillIn("input[id='value']", { with:  "3" })
+    await browser.clickOnButton("input[value='Check']")
+    let content = await browser.getContent("[id='display_answer']")
+    expect(content).to.eql('Fizz');
+})
+```
+* When the browser opens, it will scan the page for a <i>Check</i> button.
+* The browser will fill in number 3 to an input filed with id <i>value</i>.
+* The browser will click the <i>check</i> button that has an attribute value of <i>Check</i>.
+* The browser will scan the page for an element with id attribute <i>dislpay_answer</i> and that element must display the word <i>Fizz</i>.
+
+> <u>Question 8: </u>
