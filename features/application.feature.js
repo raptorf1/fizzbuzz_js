@@ -1,6 +1,6 @@
 require('../spec.helper');
 
-context('Your Description of the test scenario', () => {
+describe ('User can input a value and get FizzBuzz results', () => {
   // Initialize a browser and visit the server's root path
   before(async () => {
     await browser.init()

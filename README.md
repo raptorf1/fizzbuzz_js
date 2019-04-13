@@ -171,4 +171,23 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 * Unit testing only checks a single component of the system. In our case, it checks that the FizzBuzz function produces the desired output in a console environment.
 * Feature testing checks if an application is working as a whole, as described in the system requirement specifications. In our case, since we want to make a website that any user can visit we must check that there is an input field, an output field to diplay the result, etc.
 
-> Question 6:
+> Question 6: To the best of your knowledge, please explain what this following code does:
+```javascript
+describe('User can input a value and get FizzBuzz results', () => {
+    before(async () => {
+        await  browser.init()
+        await  browser.visitPage('http://localhost:8080/')
+    });
+
+    beforeEach(async () => {
+        await  browser.page.reload();
+    })
+
+    after(async ()=> {
+        await  browser.close();
+    })
+})
+```
+* Open up the Chromium browser and visit the server's root path.
+* Reload the page before each test.
+* Browser closes after the test is finished.
