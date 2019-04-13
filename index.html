@@ -7,15 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fizz Buzz Javascript Challenge</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body>
-    <input type="number" id="value" step="1" autofocus required>
-    <button type="button" value="Check" id="button">Click Here Please</button>
+<body style="background-color: #faad63">
+    <h1 style="text-align: center">The Fizz Buzz Game</h1>
+    <br>    
+    <h3 style="text-align: center">For numbers that are multiples of 3 print "Fizz" and for numbers that are multiples
+          of five print "Buzz". For numbers that are multiples of both 3 and 5 print "FizzBuzz".</h3>
+    <br>
+    <div style="text-align:center">
+    <input style="border: 3px solid grey; background-color: violet" type="number" id="value" step="1" placeholder="Type in a number here" autofocus>
+    </div>
+    <br>
+    <div style="text-align: center">
+    <button type="button" value="Check" id="button" cursor="pointer" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">Result</button>
+    <button onclick="reload()" type="button" id="reload-button" cursor="pointer" class="bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded-full">Reset</button>
+    </div>
     <br>
     <br>
-    <div id="display_answer"></div>
-    
+    <div>
+        <p id="display_answer" style="text-align:center; color: darkgreen; font-size: xx-large"></p>
+    </div>
+    <br>
+    <br>    
+    <img src="./image.png">
+
     <script src="./src/js/fizz-buzz.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -27,7 +45,15 @@
                 let result = fizzBuzz.check(value)
                 displayDiv.innerHTML = result;
             })
-})
+        })
+
+        let input = document.getElementById("value");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("button").click();
+                }
+        });
     </script>
 </body>
 

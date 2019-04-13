@@ -17,3 +17,7 @@ function FizzBuzz() {
             }
         }
 }
+
+function reload() {
+    window.location.reload(true)
+}
