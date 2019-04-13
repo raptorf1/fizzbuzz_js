@@ -153,4 +153,14 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 * This line of code creates a new `FizzBuzz` object. Probably, the way we will implement the code further down, will create a new instance of the object (`fizzBuzz`), every time the user types in a number. For testng purposes ne need it present before each test, until we implement it in the JavaScript file.
 * Of course after 10 minutes of error messages, I found out that we must declare it in each test. So maybe we do not need it at all outside the `it` block? Cause tests are passing (at this stage) even without the whole `describe` block.
 
-> jkj
+> Question 3: To the best of your knowledge please explain the difference between using `===` and `==` in JavaScript.
+
+* The difference between `==` and `===` operators, is that `==` compares operands by making type correction, whereas `===` not only checks the value, but also `typeof` of the two operands. If two operands are not of the same type, `===` returns false, while `==` returns true.
+
+* Examples:
+1. 2 == "2"  -> true, auto type coercion, string converted into number
+2. 2 === "2"  -> false, since both operands are not of same type
+
+* In our case, it's about implementing a sad path in our code. That way, if the user input is anything else but a number, the function will return an error message that we can set.
+
+> Question 4:
