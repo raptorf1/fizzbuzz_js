@@ -1,6 +1,9 @@
 function FizzBuzz() {
     this.check = (number) => {
-        if (number % 5 === 0 && number % 3 === 0){
+        if (Number(number) == 0){
+            return "Please type in a valid number";
+        }
+        else if (number % 5 === 0 && number % 3 === 0){
             return "FizzBuzz";
         }
         else if (number % 5 === 0){

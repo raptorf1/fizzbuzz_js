@@ -1,14 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Puppeteer Mocha Scaffold</title>
+    <title>Fizz Buzz Javascript Challenge</title>
 </head>
+
 <body>
-    <input type="text" id="value">
-    <input tpe="submit" value="Check" id="button">
+    <input type="number" id="value" step="1" autofocus required>
+    <button type="button" value="Check" id="button">Click Here Please</button>
+    <br>
+    <br>
     <div id="display_answer"></div>
     
     <script src="./src/js/fizz-buzz.js"></script>
@@ -21,9 +26,9 @@
                 let fizzBuzz = new FizzBuzz
                 let result = fizzBuzz.check(value)
                 displayDiv.innerHTML = result;
-                })
-        })    
+            })
+})
     </script>
-
 </body>
+
 </html>
