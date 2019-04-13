@@ -18,3 +18,8 @@ it ("returns Buzz if number is divisible by 5", () => {
     let fizzBuzz = new FizzBuzz;
     expect(fizzBuzz.check(5)).to.eql("Buzz");
 });
+
+it ("returns FizzBuzz if number is divisible by both 3 & 5", () => {
+    let fizzBuzz = new FizzBuzz;
+    expect(fizzBuzz.check(15)).to.eql("FizzBuzz");
+});

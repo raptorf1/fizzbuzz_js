@@ -10,7 +10,7 @@
 
 # Problem statement
 
-Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of fifteen print “FizzBuzz”. Write the program using JavaScript and deploy it through GitHub pages.
+Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both 3 & 5 print “FizzBuzz”. Write the program using JavaScript and deploy it through GitHub pages.
 
 
 # Getting Started
@@ -164,7 +164,11 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 
 > Question 4: To the best of your knowledge, please explain why we are moving (number % 5 === 0) to the top?
 
-* Because the function runs the code from top to bottom and from left to right. This means that if the `number % 3 === 0` statement was first and the input was 15, the output would be "Fizz" cause 15 % 3 also equals 0. And we do not want that, cause it breaks the rules of the challenge. So we first check `number % 15 === 0` and then `number % 5 === 0` and last `number % 3 === 0`. That way, we get the desired output.
+* Because the function runs the code from top to bottom and from left to right. This means that if the `number % 3 === 0` statement was first and the input was 15, the output would be "Fizz" cause 15 % 3 also equals 0. And we do not want that, cause it breaks the rules of the challenge. So we first check `number % 5 === 0 && number % 3 === 0` and then `number % 5 === 0` and last `number % 3 === 0`. That way, we get the desired output.
 
-> Question 5: 
+> Question 5: To the best of your knowledge please explain the difference between feature and unit test.
 
+* Unit testing only checks a single component of the system. In our case, it checks that the FizzBuzz function produces the desired output in a console environment.
+* Feature testing checks if an application is working as a whole, as described in the system requirement specifications. In our case, since we want to make a website that any user can visit we must check that there is an input field, an output field to diplay the result, etc.
+
+> Question 6:
