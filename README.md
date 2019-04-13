@@ -146,6 +146,11 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 ```
 * The fs module of Node.js provides useful functions to interact with the file system. There is no need to install it. Being part of the Node core, it can be used by requiring it. And we do that with the `const fs` line.
 * After requiring the fs module we can call on its functions. One of these is `.readFileSync` function which reads the content of a file. In our case the file that will host the JavaScript code of our FizzBuzz challenge.
-* The `eval()` function evaluates JavaScript code represented as a string.
+* The `eval()` function evaluates JavaScript code represented as a string. At least that's what the Mozilla site says. As to why do we need it here, I am anaware to be honest.
 
-> Question 2:
+> Question 2: To the best of your knowledge please explain why we are placing the `let fizzBuzz = new FizzBuzz` outside the it block?
+
+* This line of code creates a new `FizzBuzz` object. Probably, the way we will implement the code further down, will create a new instance of the object (`fizzBuzz`), every time the user types in a number. For testng purposes ne need it present before each test, until we implement it in the JavaScript file.
+* Of course after 10 minutes of error messages, I found out that we must declare it in each test. So maybe we do not need it at all outside the `it` block? Cause tests are passing (at this stage) even without the whole `describe` block.
+
+> jkj
