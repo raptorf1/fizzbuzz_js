@@ -136,7 +136,7 @@ Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 
 # Craft Academy Questions
 
-> <u> Question 1: To the best of your knowledge, please explain what the following lines of code do:</u>
+> <u> Question 1: To the best of your knowledge, please explain what the following lines of code do.</u>
 
 ``` javascript
 const fs = require('fs');
@@ -171,7 +171,7 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 * Unit testing only checks a single component of the system. In our case, it checks that the FizzBuzz function produces the desired output in a console environment.
 * Feature testing checks if an application is working as a whole, as described in the system requirement specifications. In our case, since we want to make a website that any user can visit we must check that there is an input field, an output field to diplay the result, etc.
 
-> <u> Question 6: To the best of your knowledge, please explain what this following code does:</u>
+> <u> Question 6: To the best of your knowledge, please explain what this following code does.</u>
 ```javascript
 describe('User can input a value and get FizzBuzz results', () => {
     before(async () => {
@@ -206,4 +206,28 @@ it('clicking on the "Check" button', async () => {
 * The browser will click the <i>check</i> button that has an attribute value of <i>Check</i>.
 * The browser will scan the page for an element with id attribute <i>dislpay_answer</i> and that element must display the word <i>Fizz</i>.
 
-> <u>Question 8: </u>
+> <u>Question 8: To the best of your knowledge, please write a line to line explanation of what is happening in the code below.</u>
+```javascript
+<script src="./js/fizz-buzz.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let button = document.getElementById('button')
+            let displayDiv = document.getElementById('display_answer')
+            button.addEventListener('click', () =>{
+                let value = document.getElementById('value').value
+                let fizzBuzz = new FizzBuzz
+                let result = fizzBuzz.check(value)
+                displayDiv.innerHTML = result;
+            })
+        })
+    </script>
+```
+* We are loading the fizz-buzz.js file so that we can be able to run the number calculations.
+* We are listening to the whole DOM as soon as it loads.
+* We are assigning the variable <i>button</i> to the element that has the same id attribute. That is what the user clicks on to see the result of the number he inputed.
+* We are assigning the variable <i>displayDiv</i> to the empty div element we have in our index.html file with the same id and which houses the result of the user input.
+* We listen for the element with id <i>button</i> and when the user clicks on it the following things happen:
+1. We get the user input (the value) from the element with id <i>value</i>. We assign a variable to that for easier use further down.
+2. We create a new fizzBuzz object/function from the FizzBuzz class.
+3. We run the function with arrgument the value from step 1. We assign another variable to that called <i>result</i>.
+4. We populate the empty so far div element, with the result from step 3.
