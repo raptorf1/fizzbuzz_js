@@ -10,8 +10,7 @@
 
 # Problem statement
 
-Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
-Write the program using JavaScript and deploy it through GitHub pages.
+Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of fifteen print “FizzBuzz”. Write the program using JavaScript and deploy it through GitHub pages.
 
 
 # Getting Started
@@ -161,6 +160,11 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 1. 2 == "2"  -> true, auto type coercion, string converted into number
 2. 2 === "2"  -> false, since both operands are not of same type
 
-* In our case, it's about implementing a sad path in our code. That way, if the user input is anything else but a number, the function will return an error message that we can set.
+* In our case, it's also a good way to implement a sad path in our code. That way, if the user input is anything else BUT a number, the function will return an error message.
 
-> Question 4:
+> Question 4: To the best of your knowledge, please explain why we are moving (number % 5 === 0) to the top?
+
+* Because the function runs the code from top to bottom and from left to right. This means that if the `number % 3 === 0` statement was first and the input was 15, the output would be "Fizz" cause 15 % 3 also equals 0. And we do not want that, cause it breaks the rules of the challenge. So we first check `number % 15 === 0` and then `number % 5 === 0` and last `number % 3 === 0`. That way, we get the desired output.
+
+> Question 5: 
+
