@@ -13,113 +13,42 @@
 Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both 3 & 5 print “FizzBuzz”. Write the program using JavaScript and deploy it through GitHub pages.
 
 
-# Getting Started
+# Project deployment
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on your Interactive Ruby Shell (IRB) system.
+The project is deployed using GitHub pages. You can visit the website by clicking [here]().
 
-# Prerequisites
+# Prerequisites for testing
 
-* You will need Ruby installed on your system.
-* You will need Bundler installed on your system.
-* You will need IRB installed on your system.
+You will need `Node.js` and `npm` installed on your system. You can find instructions on how to do so [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 
-# Installing
+# Installing Requirements for Testing
 
-Make sure you are in the project folder.
+**Make sure you are in the project folder.**
 
-Run IRB in your Terminal:
-
-`irb`
- 
-
-Load the visitor.rb file or library.rb file depending on what type of access you want to have.
-
-`load './lib/visitor.rb'`
-
-`load './lib/library.rb'`
-
-You are good to go!
+Run in your Terminal:
+* `npm init` to initialize npm and download the latest versions of all dependencies
+* `npm i e2e_training_wheels --save-dev` to download the testing package
+* `node ./node_modules/e2e_training_wheels/dist/install.js` to auto configure the testing package
+* `npm link` to bundle everything together
 
 # Running the tests
 
-After you fork the repository, run `bundle install` in your Terminal and make sure you are in the project folder. That should install RSPEC on your computer.
-
-Then, from your Terminal go to the project folder and run `rspec`.
-
-# Deployment
-#### FROM THE VISITOR'S POINT OF VIEW
-
-To create a library visitor, run
-
-```
-visitor = Visitor.new("name")
-```
-
-To view the list of books library has, run
-```
-visitor.view_books
-```
-To search a book by title, run
-```
-visitor.search_by_title("Book title or a part of it")
-```
-
-To search a book by author, run
-```
-visitor.search_by_author("Author's name and/or surname")
-```
-
-To checkout the book, run
-```
-visitor.checkout_book(book index number)
-```
-To see if you are currently borrowing any books, run
-
-```
-visitor.my_books
-```
-
-#### FROM THE LIBRARY'S POINT OF VIEW
-
-To initialize a library run
-
-```
-library = Library.new
-```
-
-To search a book by title, run
-```
-library.search_by_title("Book title or a part of it")
-```
-
-To search a book by author, run
-```
-library.search_by_author("Author's name and/or surname")
-```
-
-To checkout the book, run
-```
-library.checkout_book(book index number, visitor's name)
-```
-To add a new book to your database, run
-```
-library.add_new_book(title, author)
-```
-
-To return a book, run
-```
-library.return_book(book index number)
-```
+* The command `npm run features` will start a local webserver, launch Chrome and run your acceptance tests.
+* The command `npm run specs` will run your unit tests.
+* If you execute `npm test` in your terminal, both your acceptance tests and unit tests will be run.
 
 # Built with
 
-[Ruby](https://www.ruby-lang.org/en/) - The worlds best programming language.
+* HTML
+* CSS
+* JavaScript
 
 # Tested with
 
-[RSPEC](http://rspec.info) - Making TDD Productive and Fun.
-
+* [npm](https://www.npmjs.com/) - 
+Build amazing things
+* [e2e-Training-Wheels](https://www.npmjs.com/package/e2e_training_wheels) - End-To-End Testing
 
 # Authors
 
@@ -128,11 +57,12 @@ library.return_book(book index number)
 
 # License
 
-This project utilizes the MIT open-source license. https://opensource.org/licenses/MIT
+This project utilizes the [MIT](https://opensource.org/licenses/MIT) open-source license.
 
 # Acknowledgments
 
-Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) for the README template 
+* Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) for the README template
+* [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/) - A utility-first CSS framework for rapidly building custom user interfaces
 
 # Craft Academy Questions
 
@@ -231,3 +161,8 @@ it('clicking on the "Check" button', async () => {
 2. We create a new fizzBuzz object/function from the FizzBuzz class.
 3. We run the function with arrgument the value from step 1. We assign another variable to that called <i>result</i>.
 4. We populate the empty so far div element, with the result from step 3.
+
+> <u> Question 9: To the best of your knowledge, please explain what a CDN (Content Delivery Network) is.</u>
+
+A content delivery network (CDN) is a system of distributed servers (network) that deliver pages and other Web content to a user, based on the geographic locations of the user, the origin of the webpage and the content delivery server.
+In plain English, it's what Tailwind does. It gives you access to styling attributes and all you have to do is put a simple link in the head of your index.html file and a coded class name to the elements you want to style.
