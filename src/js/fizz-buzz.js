@@ -21,3 +21,11 @@ function FizzBuzz() {
 function reload() {
     window.location.reload(true)
 }
+
+ function calculate () {
+     let displayDiv = document.getElementById("display_answer");
+     let value = document.getElementById("value").value;
+     let fizzBuzz = new FizzBuzz;
+     let result = fizzBuzz.check(value);
+     displayDiv.innerHTML = result;
+}

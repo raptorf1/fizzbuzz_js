@@ -166,5 +166,3 @@ it('clicking on the "Check" button', async () => {
 
 A content delivery network (CDN) is a system of distributed servers (network) that deliver pages and other Web content to a user, based on the geographic locations of the user, the origin of the webpage and the content delivery server.
 In plain English, it's what Tailwind does. It gives you access to styling attributes and all you have to do is put a simple link in the head of your index.html file and a coded class name to the elements you want to style.
-
-123
