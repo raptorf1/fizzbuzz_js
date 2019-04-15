@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fizz Buzz Javascript Challenge</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+</head>
+
+<body class="bg-orange-light">
+    <h1 class="text-center">The Fizz Buzz Game</h1>
+    <br>    
+    <h3 class="text-center">For numbers that are multiples of 3 print "Fizz" and for numbers that are multiples
+          of five print "Buzz". For numbers that are multiples of both 3 and 5 print "FizzBuzz".</h3>
+    <br>
+    <p class="text-center"><b>More information about the game can be found <a href="https://en.wikipedia.org/wiki/Fizz_buzz" target="_blank">here</a>.</b></p>
+    <br>
+    <div class="text-center">
+    <input style="border: 3px solid grey; background-color: #d6bbfc" type="number" id="value" step="1" placeholder="Type in a number here" autofocus>
+    </div>
+    <br>
+    <div class="text-center">
+    <button onclick="calculate()" type="button" value="Check" id="button" cursor="pointer" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">Get Result [ENTER]</button>
+    <button onclick="reload()" type="button" id="reload-button" cursor="pointer" class="bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded-full">Reset [ESC]</button>
+    </div>
+    <br>
+    <br>
+    <div>
+        <p id="display_answer" class="text-center text-green-dark text-3xl font-extrabold font-serif"></p>
+    </div>
+    <br>
+    <br>    
+    <img src="./image.png">
+
+    <script src="./src/js/fizz-buzz.js"></script>    
+    <script>
+        let inputENT = document.getElementById("value");
+        inputENT.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("button").click();
+        }
+    });
+
+        let inputESC = document.getElementById("value");
+        inputESC.addEventListener("keyup", function (event) {
+            if (event.keyCode === 27) {
+                event.preventDefault();
+                document.getElementById("reload-button").click();
+        }
+    });
+    </script>
+    
+</body>
+
+</html>
