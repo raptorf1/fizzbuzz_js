@@ -15,7 +15,7 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 
 # Project deployment
 
-The project is deployed using GitHub pages. You can visit the website by clicking [here]().
+The project is deployed using GitHub pages. You can visit the website by clicking [here](https://raptorf1.github.io/fizzbuzz_js/).
 
 # Prerequisites for testing
 
